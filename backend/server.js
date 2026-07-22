@@ -16,6 +16,6 @@ app.get('/', (req,res)=>{
 
 connectDB();
 console.log(process.env.PORT)
-app.listen(process.env.PORT, () => {
-    console.log("server is running in the PORT")
-})
+// app.listen(process.env.PORT, () => {
+//     console.log("server is running in the PORT")
+// })
