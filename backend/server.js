@@ -7,11 +7,12 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({
-  origin: "https://practise-lbm9.vercel.app/",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  })
+);
 app.use(express.json());
 
 app.get('/', (req, res) => {
