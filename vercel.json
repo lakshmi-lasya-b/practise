@@ -7,7 +7,7 @@
     },
     {
       "src": "frontend/my-react-app/package.json",
-      "use": "@vercel/static",
+      "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
       }
@@ -16,11 +16,10 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/api/index.js"
+      "dest": "backend/api/index.js"
     },
     {
-      "src": "/assets/(.*)",
-      "dest": "/frontend/my-react-app/dist/assets/$1"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
