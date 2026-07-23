@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, type ChangeEvent, type FormEvent } from "react"
 import api from "../api/axios"
 import './Signup.css'
 export default function Signup() {
@@ -9,14 +9,14 @@ export default function Signup() {
         password: ""
     })
 
-    const handleChange = (e) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         setFormData({
             ...formData,
-            [e.target.name]:[e.target.value]
+            [e.target.name]: e.target.value
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try{
             const response = await api.post("/api/post", formData);
