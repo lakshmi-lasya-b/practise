@@ -18,6 +18,19 @@ app.get('/api/health', (req, res) => {
     res.json({ status: 'ok' });
 });
 
+app.post('/api/post', (req, res) => {
+    const { name, email, password } = req.body;
+
+    if (!name || !email || !password) {
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+
+    return res.status(201).json({
+        message: 'Signup data received successfully',
+        data: { name, email }
+    });
+});
+
 connectDB().catch((error) => {
     console.error('Database connection error:', error);
 });
