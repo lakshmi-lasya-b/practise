@@ -19,8 +19,12 @@
       "dest": "/backend/api/index.js"
     },
     {
+      "src": "/assets/(.*)",
+      "dest": "/frontend/my-react-app/dist/assets/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/index.html"
+      "dest": "/frontend/my-react-app/dist/index.html"
     }
   ]
 }
